@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1nhc6q6il0tl"]
+
+[ext_resource type="Script" path="res://Scenes/Items/rope_root.gd" id="1_se6lf"]
+
+[node name="RopeRoot" type="Node2D"]
+script = ExtResource("1_se6lf")
+
+[node name="Sections" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="Sections"]
+position = Vector2(3, 0)
+target_position = Vector2(0, 96)
+collision_mask = 8
+
+[node name="UpRay" type="RayCast2D" parent="Sections"]
+position = Vector2(3, 0)
+target_position = Vector2(0, -32)
+collision_mask = 8

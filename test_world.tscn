@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1o2vi0opxpfg"]
+
+[ext_resource type="Script" path="res://Scripts/WorldGen/test_world.gd" id="1_b7hcn"]
+[ext_resource type="PackedScene" uid="uid://dnk6gx642gqgn" path="res://world_generator.tscn" id="1_jm0tm"]
+[ext_resource type="PackedScene" uid="uid://1sjhwdn1t373" path="res://player.tscn" id="2_mlxxt"]
+
+[node name="TestWorld" type="Node2D"]
+script = ExtResource("1_b7hcn")
+
+[node name="WorldGenerator" parent="." instance=ExtResource("1_jm0tm")]
+z_index = -6
+
+[node name="Player" parent="." instance=ExtResource("2_mlxxt")]
+position = Vector2(-12, 5)

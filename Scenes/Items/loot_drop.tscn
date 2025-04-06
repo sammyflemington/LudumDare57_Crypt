@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx3csamnqgqgk"]
+
+[ext_resource type="Texture2D" uid="uid://cw4dmoxdc0oha" path="res://Art/items.png" id="1_ccm2w"]
+[ext_resource type="Script" path="res://Scenes/Items/loot_drop.gd" id="1_jnrpk"]
+[ext_resource type="AudioStream" uid="uid://bk71cnpdftd5c" path="res://Sounds/glowstick_bounce.wav" id="3_rf7gm"]
+[ext_resource type="Script" path="res://Scripts/sound_effect_player.gd" id="4_dmixm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ex10"]
+atlas = ExtResource("1_ccm2w")
+region = Rect2(6, 6, 6, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ne1sm"]
+radius = 2.0
+
+[node name="LootDrop" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 8
+script = ExtResource("1_jnrpk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2ex10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ne1sm")
+
+[node name="BounceSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rf7gm")
+volume_db = 5.111
+bus = &"VerbBus"
+script = ExtResource("4_dmixm")

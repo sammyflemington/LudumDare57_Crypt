@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqynoe1meakwc"]
+
+[ext_resource type="Script" path="res://Scripts/WorldGen/generator_test_world.gd" id="1_p7mhk"]
+[ext_resource type="PackedScene" uid="uid://dnk6gx642gqgn" path="res://world_generator.tscn" id="2_8i838"]
+[ext_resource type="Texture2D" uid="uid://bur6hs6pcjysa" path="res://Art/player.png" id="2_np5sq"]
+[ext_resource type="FontFile" uid="uid://cq1584exfrugd" path="res://Art/Pixeled.ttf" id="3_vewlc"]
+
+[node name="GeneratorTestWorld" type="Node2D"]
+script = ExtResource("1_p7mhk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(373, 274)
+zoom = Vector2(0.25, 0.25)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_np5sq")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer/TextureRect"]
+modulate = Color(1, 1, 1, 0.592157)
+layout_mode = 0
+offset_left = -44.0
+offset_top = -22.0
+offset_right = 16.0
+offset_bottom = 8.0
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("3_vewlc")
+theme_override_font_sizes/font_size = 5
+text = "wasd: move
+up/down: zoom
+f: spawn here
+g: regenerate level"
+
+[node name="WorldGenerator" parent="." instance=ExtResource("2_8i838")]
+walker_count = 6

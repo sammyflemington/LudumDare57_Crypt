@@ -1,0 +1,15 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxagbqi7v3wiq"]
+
+[ext_resource type="Script" path="res://Scripts/music_manager.gd" id="1_7c66k"]
+[ext_resource type="AudioStream" uid="uid://gvwyghwenm3k" path="res://Sounds/scary_ambience_1.wav" id="2_c0h05"]
+[ext_resource type="AudioStream" uid="uid://uceex3ypckjv" path="res://Sounds/scary_ambience_2.wav" id="3_xfevb"]
+[ext_resource type="AudioStream" uid="uid://bqcbxy7263al6" path="res://Sounds/scary_ambience_3.wav" id="4_yglow"]
+[ext_resource type="AudioStream" uid="uid://benwo4hvw0gnc" path="res://Sounds/scary_ambience_4.wav" id="5_vgsq5"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_7c66k")
+scary_ambiences = Array[AudioStream]([ExtResource("2_c0h05"), ExtResource("3_xfevb"), ExtResource("4_yglow"), ExtResource("5_vgsq5")])
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c0h05")
+bus = &"VerbBus"
