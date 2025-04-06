@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("mine_down"):
 		camera_2d.zoom -= Vector2(.1,.1)
 	camera_2d.zoom = clamp(camera_2d.zoom, Vector2(0.1, 0.1), Vector2(1.0, 1.0))
-	if Input.is_action_just_pressed("rope") and not spawned:
+	if Input.is_action_just_pressed("glowstick") and not spawned:
 		camera_2d.enabled = false
 		var player = player_scn.instantiate()
 		add_child(player)

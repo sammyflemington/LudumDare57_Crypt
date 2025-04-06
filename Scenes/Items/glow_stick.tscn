@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://d13p82kshpmh4"]
 
-[ext_resource type="Script" path="res://Scenes/Items/glow_stick.gd" id="1_0w8m2"]
+[ext_resource type="Script" uid="uid://o4bkjqiqqhfn" path="res://Scenes/Items/glow_stick.gd" id="1_0w8m2"]
 [ext_resource type="Texture2D" uid="uid://cw4dmoxdc0oha" path="res://Art/items.png" id="1_jsxc3"]
 [ext_resource type="Texture2D" uid="uid://d1ugtayr4c6cq" path="res://Art/light_small.png" id="3_5a5v5"]
-[ext_resource type="Script" path="res://Scripts/flickering_light.gd" id="4_268md"]
+[ext_resource type="Script" uid="uid://s0md7cypa1vp" path="res://Scripts/flickering_light.gd" id="4_268md"]
 [ext_resource type="AudioStream" uid="uid://bk71cnpdftd5c" path="res://Sounds/glowstick_bounce.wav" id="5_8m6pd"]
-[ext_resource type="Script" path="res://Scripts/sound_effect_player.gd" id="6_a4ir0"]
+[ext_resource type="Script" uid="uid://cailuu6804x1h" path="res://Scripts/sound_effect_player.gd" id="6_a4ir0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6agh"]
 atlas = ExtResource("1_jsxc3")

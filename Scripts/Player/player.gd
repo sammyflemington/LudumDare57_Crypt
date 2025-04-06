@@ -16,6 +16,7 @@ signal glow_sticks_changed(to: int)
 signal died()
 @onready var dead_state: Node = $StateMachine/DeadState
 var dead: bool = false
+@onready var normal_state: Node = $StateMachine/NormalState
 
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var state_machine: StateMachine = $StateMachine
@@ -30,11 +31,19 @@ var glow_bits : int = 0
 var can_move = false
 @onready var eyelid_player: AnimationPlayer = $CanvasLayer/EyelidPlayer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var blood_parts: GPUParticles2D = $Flipper/BloodParts
+@onready var mining_parts: GPUParticles2D = $PickaxeRotator/MiningParts
 
 func _ready():
+	blood_parts.emitting = true
+	mining_parts.emitting = true
+	await get_tree().create_timer(0.1)
+	blood_parts.emitting = false
+	mining_parts.emitting = false
 	eyelid_player.play("Wake")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	can_move = true
+	
 
 func _physics_process(dt: float) -> void:
 	invuln_timer -= dt
@@ -57,6 +66,21 @@ func _physics_process(dt: float) -> void:
 			get_hurt((last_fall_speed - 120) / 4.0)
 		last_fall_speed = 0.0
 	
+	# Throw glow sticks
+	if Input.is_action_just_pressed("glowstick") and glow_sticks > 0:
+		var up_amount = 0
+		if Input.is_action_pressed("up"):
+			up_amount = -1
+		glow_sticks -= 1
+		glow_sticks_changed.emit(glow_sticks)
+		# throw a glowstick
+		var stick = glow_stick.instantiate()
+		stick.global_position = global_position
+		stick.velocity = Vector2(normal_state.facing, up_amount) * 50.0 + Vector2(0, -20)
+		Globals.world.add_game_object(stick)
+
+	
+	
 
 var can_mine : bool = true
 @onready var mine_timer: Timer = $MineTimer
@@ -65,41 +89,28 @@ func handle_mining():
 	var mine_dir : Vector2 = Input.get_vector("mine_left", "mine_right", "mine_up", "mine_down")
 	
 	if mine_dir.length() > 0.5:
-		if Input.is_action_pressed("shift") and glow_sticks > 0:
-			if Input.is_action_just_pressed("mine_left") or \
-				Input.is_action_just_pressed("mine_right") or \
-				Input.is_action_just_pressed("mine_up") or \
-				Input.is_action_just_pressed("mine_down"):
-				# throw a glowstick
-				var stick = glow_stick.instantiate()
-				stick.global_position = global_position
-				stick.velocity = mine_dir * 50.0 + Vector2(0, -20)
-				Globals.world.add_game_object(stick)
-				glow_sticks -= 1
-				glow_sticks_changed.emit(glow_sticks)
-		else:
-			# mine a block
-			if can_mine:
-				var target_pos = global_position + (mine_dir * 6.0)
-				if Globals.world.is_terrain_at_position(target_pos):
-					var grid_pos = Globals.world.world_pos_to_cell(target_pos)
-					var tile_type: WorldGenerated.Blocks = Globals.world.break_tile_at_position(global_position + (mine_dir * 6.0))
-					
-					# create loot
-					create_loot(tile_type, grid_pos, mine_dir)
-					
-					
-					# Snap player to the cell next to the place they mined
-					position = (Vector2(grid_pos) - mine_dir) * 6.0 + Vector2(4,3)
-					mining_block_state.mine_dir = mine_dir
-					mining_block_state.old_state = state_machine.current_state
-					state_machine.enter_state(mining_block_state)
-					
-					can_mine = false
-					mine_timer.start()
-				else:
-					# Swing pickaxe as attack
-					attack(mine_dir)
+		# mine a block
+		if can_mine:
+			var target_pos = global_position + (mine_dir * 6.0)
+			if Globals.world.is_terrain_at_position(target_pos):
+				var grid_pos = Globals.world.world_pos_to_cell(target_pos)
+				var tile_type: WorldGenerated.Blocks = Globals.world.break_tile_at_position(global_position + (mine_dir * 6.0))
+				
+				# create loot
+				create_loot(tile_type, grid_pos, mine_dir)
+				
+				
+				# Snap player to the cell next to the place they mined
+				position = (Vector2(grid_pos) - mine_dir) * 6.0 + Vector2(4,3)
+				mining_block_state.mine_dir = mine_dir
+				mining_block_state.old_state = state_machine.current_state
+				state_machine.enter_state(mining_block_state)
+				
+				can_mine = false
+				mine_timer.start()
+			else:
+				# Swing pickaxe as attack
+				attack(mine_dir)
 
 @onready var pickaxe_animator: AnimationPlayer = $PickaxeRotator/PickaxeSprite/PickaxeAnimator
 @onready var pickaxe_rotator: Node2D = $PickaxeRotator
@@ -214,4 +225,4 @@ func _on_light_timer_timeout() -> void:
 func win():
 	create_tween().tween_property(fade_out_rect, "modulate", Color(1,1,1,1), 5.0)
 	await(get_tree().create_timer(7.0).timeout)
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")

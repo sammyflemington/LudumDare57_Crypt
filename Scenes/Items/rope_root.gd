@@ -10,15 +10,17 @@ var look_up = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if look_up:
+		up_ray.force_raycast_update()
 		if up_ray.is_colliding():
-			global_position.y = up_ray.get_collision_point().y + 4
+			sections.position.y = up_ray.get_collision_point().y - sections.global_position.y + 1
 		else:
 			global_position.y -= 32
 	var dist = 96
 	ray.force_raycast_update()
 	if ray.is_colliding():
-		dist = (ray.get_collision_point() - global_position).length()
-	
+		dist = (ray.get_collision_point() - global_position).length() + 1
+		print("DIST: %s" % dist)
+		print("Collider: %s", ray.get_collider())
 	var tiles = floor(dist / 6.0)
 	
 	for i in range(tiles):

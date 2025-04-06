@@ -88,7 +88,7 @@ func handle_rope():
 		
 		parent.use_rope()
 		rope.position = target_pos * 6.0
-		Globals.world.add_child(rope)
+		Globals.world.add_game_object(rope)
 
 @onready var rope_climb_state: Node = $"../RopeClimbState"
 @onready var rope_detector: Area2D = $"../../RopeDetector"

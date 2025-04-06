@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cmjmgbnjqetpk"]
 
 [ext_resource type="Texture2D" uid="uid://d1ugtayr4c6cq" path="res://Art/light_small.png" id="1_j6upw"]
-[ext_resource type="Script" path="res://Scenes/chalice_light.gd" id="1_rkyiw"]
-[ext_resource type="Script" path="res://Scripts/flickering_light.gd" id="2_d7x2y"]
+[ext_resource type="Script" uid="uid://jelqo5c6hm38" path="res://Scenes/chalice_light.gd" id="1_rkyiw"]
+[ext_resource type="Script" uid="uid://s0md7cypa1vp" path="res://Scripts/flickering_light.gd" id="2_d7x2y"]
 [ext_resource type="Texture2D" uid="uid://qmuy1qy74w1x" path="res://Art/tiles.png" id="3_6uux5"]
 [ext_resource type="AudioStream" uid="uid://b1kg7d5f1htae" path="res://Sounds/chalice_aura.wav" id="5_18gus"]
 
@@ -34,7 +34,6 @@ frame = 14
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_18gus")
-stream_paused = true
 max_distance = 100.0
 panning_strength = 3.0
 bus = &"VerbBus"

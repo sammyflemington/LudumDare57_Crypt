@@ -33,7 +33,7 @@ var replace_blocks : Dictionary = {
 	Vector2i(0,3): preload("res://Scripts/Enemies/Mummy/mummy.tscn")
 }
 var chalice_scn = preload("res://Scenes/chalice_light.tscn")
-var win_structure_idx: int = 5
+var win_structure_idx: int = 4
 var tile_set : TileSet
 var structure_markers : Array[Vector2i] = []
 # Called when the node enters the scene tree for the first time.

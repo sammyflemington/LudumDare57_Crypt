@@ -1,26 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://di6iwrgy5fslm"]
+[gd_scene load_steps=4 format=3 uid="uid://di6iwrgy5fslm"]
 
+[ext_resource type="Theme" uid="uid://pqvsn1x6qylq" path="res://theme.tres" id="1_4gxqj"]
 [ext_resource type="FontFile" uid="uid://cq1584exfrugd" path="res://Art/Pixeled.ttf" id="1_jj3j0"]
-[ext_resource type="Script" path="res://Scenes/title_screen.gd" id="2_55mqe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6h432"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0rbq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo2uw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u0ox2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_km70k"]
-
-[sub_resource type="Theme" id="Theme_mj7uh"]
-Button/font_sizes/font_size = 5
-Button/fonts/font = ExtResource("1_jj3j0")
-Button/styles/disabled = SubResource("StyleBoxEmpty_6h432")
-Button/styles/focus = SubResource("StyleBoxEmpty_k0rbq")
-Button/styles/hover = SubResource("StyleBoxEmpty_yo2uw")
-Button/styles/normal = SubResource("StyleBoxEmpty_u0ox2")
-Button/styles/pressed = SubResource("StyleBoxEmpty_km70k")
+[ext_resource type="Script" uid="uid://y8dhaf5v4nhp" path="res://Scenes/title_screen.gd" id="2_55mqe"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -29,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_mj7uh")
+theme = ExtResource("1_4gxqj")
 script = ExtResource("2_55mqe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -45,17 +27,18 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = -5
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_jj3j0")
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 10
 text = "Crypt"
 horizontal_alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_mj7uh")
+theme = ExtResource("1_4gxqj")
 theme_override_fonts/font = ExtResource("1_jj3j0")
 theme_override_font_sizes/font_size = 10
 text = "Play"

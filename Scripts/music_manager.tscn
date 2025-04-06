@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxagbqi7v3wiq"]
 
-[ext_resource type="Script" path="res://Scripts/music_manager.gd" id="1_7c66k"]
+[ext_resource type="Script" uid="uid://bt0uhsnmygjhi" path="res://Scripts/music_manager.gd" id="1_7c66k"]
 [ext_resource type="AudioStream" uid="uid://gvwyghwenm3k" path="res://Sounds/scary_ambience_1.wav" id="2_c0h05"]
 [ext_resource type="AudioStream" uid="uid://uceex3ypckjv" path="res://Sounds/scary_ambience_2.wav" id="3_xfevb"]
 [ext_resource type="AudioStream" uid="uid://bqcbxy7263al6" path="res://Sounds/scary_ambience_3.wav" id="4_yglow"]

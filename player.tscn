@@ -1,38 +1,40 @@
-[gd_scene load_steps=59 format=3 uid="uid://1sjhwdn1t373"]
+[gd_scene load_steps=61 format=3 uid="uid://1sjhwdn1t373"]
 
-[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_bbkpy"]
+[ext_resource type="Script" uid="uid://uqhct2ppm3eq" path="res://Scripts/Player/player.gd" id="1_bbkpy"]
 [ext_resource type="Texture2D" uid="uid://cw4dmoxdc0oha" path="res://Art/items.png" id="1_denaq"]
 [ext_resource type="Texture2D" uid="uid://bur6hs6pcjysa" path="res://Art/player.png" id="2_dqgmd"]
 [ext_resource type="AudioStream" uid="uid://q386v66s4ifp" path="res://Sounds/step.wav" id="2_oegeq"]
-[ext_resource type="Script" path="res://Scripts/sound_effect_player.gd" id="3_t8rd8"]
+[ext_resource type="Script" uid="uid://cailuu6804x1h" path="res://Scripts/sound_effect_player.gd" id="3_t8rd8"]
 [ext_resource type="AudioStream" uid="uid://rn01ct771nrh" path="res://Sounds/hurt_1.wav" id="4_0puyu"]
 [ext_resource type="Texture2D" uid="uid://d1ugtayr4c6cq" path="res://Art/light_small.png" id="4_ljb20"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/state_machine.gd" id="5_2cn58"]
+[ext_resource type="Script" uid="uid://dlmlqea2et8ql" path="res://Scripts/Player/PlayerStates/state_machine.gd" id="5_2cn58"]
 [ext_resource type="AudioStream" uid="uid://b45wsbo4wv46m" path="res://Sounds/pickup_2.wav" id="5_pj87d"]
-[ext_resource type="Script" path="res://Scripts/flickering_light.gd" id="5_qoohv"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/normal_state.gd" id="5_whqw6"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/wall_hold_state.gd" id="6_ad5e5"]
+[ext_resource type="Script" uid="uid://s0md7cypa1vp" path="res://Scripts/flickering_light.gd" id="5_qoohv"]
+[ext_resource type="Script" uid="uid://dfywyesasn3hx" path="res://Scripts/Player/PlayerStates/normal_state.gd" id="5_whqw6"]
+[ext_resource type="Script" uid="uid://d137apv5d7hd3" path="res://Scripts/Player/PlayerStates/wall_hold_state.gd" id="6_ad5e5"]
 [ext_resource type="AudioStream" uid="uid://dsgyke4o1gxlg" path="res://Sounds/swing_pick.wav" id="6_q0ynn"]
-[ext_resource type="Script" path="res://Scripts/Player/damage_area.gd" id="7_ovohi"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/mining_block_state.gd" id="8_6kn8l"]
+[ext_resource type="Script" uid="uid://chunh52pa5aup" path="res://Scripts/Player/damage_area.gd" id="7_ovohi"]
+[ext_resource type="Script" uid="uid://bpxdvtbua4xpo" path="res://Scripts/Player/PlayerStates/mining_block_state.gd" id="8_6kn8l"]
 [ext_resource type="AudioStream" uid="uid://b06qhiq1k8v2l" path="res://Sounds/mine_stone2.wav" id="9_e7a6o"]
-[ext_resource type="Script" path="res://Scripts/Player/rope_detector.gd" id="10_0ybef"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/dead_state.gd" id="10_1va73"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/rope_climb_state.gd" id="10_2pds0"]
+[ext_resource type="Script" uid="uid://wb8exesr48mr" path="res://Scripts/Player/rope_detector.gd" id="10_0ybef"]
+[ext_resource type="Script" uid="uid://b8yxw4yo3tm8w" path="res://Scripts/Player/PlayerStates/dead_state.gd" id="10_1va73"]
+[ext_resource type="Script" uid="uid://blnraeyg613x3" path="res://Scripts/Player/PlayerStates/rope_climb_state.gd" id="10_2pds0"]
 [ext_resource type="Texture2D" uid="uid://qmuy1qy74w1x" path="res://Art/tiles.png" id="10_3tovm"]
 [ext_resource type="AudioStream" uid="uid://dybejdie0tobc" path="res://Sounds/win.wav" id="11_1hlc8"]
 [ext_resource type="FontFile" uid="uid://cq1584exfrugd" path="res://Art/Pixeled.ttf" id="13_m8313"]
-[ext_resource type="Script" path="res://Scripts/cave_openness_finder.gd" id="15_pnw3q"]
-[ext_resource type="Script" path="res://Scripts/materials_hud.gd" id="17_bcdl6"]
+[ext_resource type="Script" uid="uid://b0cvyd3xuv61f" path="res://Scripts/cave_openness_finder.gd" id="15_pnw3q"]
+[ext_resource type="Script" uid="uid://bgo48vytnf53t" path="res://Scripts/materials_hud.gd" id="17_bcdl6"]
 [ext_resource type="Texture2D" uid="uid://c8prjfig1nw3g" path="res://Art/hpbar_back.png" id="18_fnsp5"]
 [ext_resource type="Texture2D" uid="uid://c4drkcf5umfbn" path="res://Scenes/Items/glowstick_texture.tres" id="18_qkmao"]
 [ext_resource type="Texture2D" uid="uid://dugtqrtu1luce" path="res://Art/hpbar_middle.png" id="19_3i5dj"]
-[ext_resource type="Script" path="res://Scripts/Player/health_bar.gd" id="20_5rkle"]
-[ext_resource type="Script" path="res://Scripts/Player/loot_detector.gd" id="20_rf8bm"]
+[ext_resource type="Script" uid="uid://du5gsb8xdcnml" path="res://Scripts/Player/health_bar.gd" id="20_5rkle"]
+[ext_resource type="Script" uid="uid://b4twjql5jvj5m" path="res://Scripts/Player/loot_detector.gd" id="20_rf8bm"]
 [ext_resource type="Texture2D" uid="uid://dfvqfvjd6en4r" path="res://Art/hpbar_fill.png" id="21_ocf46"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/win_state.gd" id="21_rr7p0"]
+[ext_resource type="Script" uid="uid://bbwd2qpanmu2x" path="res://Scripts/Player/PlayerStates/win_state.gd" id="21_rr7p0"]
 [ext_resource type="Texture2D" uid="uid://b3v4ld10x1tq6" path="res://Art/eyelid.png" id="27_kbpe5"]
 [ext_resource type="AudioStream" uid="uid://c068yan1h6v16" path="res://Sounds/wake_up.wav" id="28_f4gk2"]
+[ext_resource type="Theme" uid="uid://pqvsn1x6qylq" path="res://theme.tres" id="32_hl5qd"]
+[ext_resource type="Script" uid="uid://bpmelto8jrvqg" path="res://pause_menu.gd" id="33_ek41f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8mvk"]
 size = Vector2(3, 4)
@@ -569,11 +571,11 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_reoch"]
 _data = {
-"Die": SubResource("Animation_rcoyi"),
-"Idle": SubResource("Animation_2fr4b"),
-"RESET": SubResource("Animation_utmpw"),
-"Run": SubResource("Animation_2sqfh"),
-"Win": SubResource("Animation_je1f6")
+&"Die": SubResource("Animation_rcoyi"),
+&"Idle": SubResource("Animation_2fr4b"),
+&"RESET": SubResource("Animation_utmpw"),
+&"Run": SubResource("Animation_2sqfh"),
+&"Win": SubResource("Animation_je1f6")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_la3u1"]
@@ -801,8 +803,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85go2"]
 _data = {
-"RESET": SubResource("Animation_uowtm"),
-"Swing": SubResource("Animation_efvl6")
+&"RESET": SubResource("Animation_uowtm"),
+&"Swing": SubResource("Animation_efvl6")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4n6hc"]
@@ -965,8 +967,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fdjue"]
 _data = {
-"RESET": SubResource("Animation_hu84b"),
-"Wake": SubResource("Animation_rfif1")
+&"RESET": SubResource("Animation_hu84b"),
+&"Wake": SubResource("Animation_rfif1")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_biabj"]
@@ -1007,7 +1009,7 @@ shape = SubResource("RectangleShape2D_p8mvk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_reoch")
+&"": SubResource("AnimationLibrary_reoch")
 }
 speed_scale = 2.0
 
@@ -1022,7 +1024,7 @@ offset = Vector2(-2, -2)
 
 [node name="PickaxeAnimator" type="AnimationPlayer" parent="PickaxeRotator/PickaxeSprite"]
 libraries = {
-"": SubResource("AnimationLibrary_85go2")
+&"": SubResource("AnimationLibrary_85go2")
 }
 
 [node name="DamageArea" type="Area2D" parent="PickaxeRotator/PickaxeSprite"]
@@ -1039,9 +1041,9 @@ disabled = true
 position = Vector2(7, 0)
 emitting = false
 amount = 3
-process_material = SubResource("ParticleProcessMaterial_66fk3")
 lifetime = 0.2
 one_shot = true
+process_material = SubResource("ParticleProcessMaterial_66fk3")
 
 [node name="Flipper" type="Node2D" parent="."]
 
@@ -1071,9 +1073,9 @@ bus = &"VerbBus"
 [node name="BloodParts" type="GPUParticles2D" parent="Flipper"]
 emitting = false
 amount = 28
-process_material = SubResource("ParticleProcessMaterial_usxpk")
 lifetime = 0.5
 one_shot = true
+process_material = SubResource("ParticleProcessMaterial_usxpk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -1265,7 +1267,7 @@ texture = ExtResource("27_kbpe5")
 
 [node name="EyelidPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 libraries = {
-"": SubResource("AnimationLibrary_fdjue")
+&"": SubResource("AnimationLibrary_fdjue")
 }
 speed_scale = 2.0
 
@@ -1288,6 +1290,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="ColorRect" parent="CanvasLayer"]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("32_hl5qd")
+color = Color(0.169245, 0.169245, 0.169245, 0.8)
+script = ExtResource("33_ek41f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "resume"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "quit to menu"
 
 [node name="CaveOpennessFinder" type="Node2D" parent="."]
 script = ExtResource("15_pnw3q")
@@ -1322,5 +1358,7 @@ shape = SubResource("RectangleShape2D_biabj")
 [connection signal="timeout" from="StateMachine/MiningBlockState/Timer" to="StateMachine/MiningBlockState" method="_on_timer_timeout"]
 [connection signal="area_entered" from="RopeDetector" to="RopeDetector" method="_on_area_entered"]
 [connection signal="area_exited" from="RopeDetector" to="RopeDetector" method="_on_area_exited"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/ResumeButton" to="CanvasLayer/PauseMenu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/VBoxContainer/QuitButton" to="CanvasLayer/PauseMenu" method="_on_quit_button_pressed"]
 [connection signal="body_entered" from="LootDetector" to="LootDetector" method="_on_body_entered"]
 [connection signal="body_exited" from="LootDetector" to="LootDetector" method="_on_body_exited"]

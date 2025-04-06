@@ -1,75 +1,16 @@
 [gd_scene load_steps=18 format=3 uid="uid://dx5uxgpmyfq2m"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/Mummy/mummy.gd" id="1_cg7va"]
+[ext_resource type="Script" uid="uid://bhe3lbt7mjv4p" path="res://Scripts/Enemies/Mummy/mummy.gd" id="1_cg7va"]
 [ext_resource type="Texture2D" uid="uid://clt46oxeu8j2s" path="res://Art/enemy_mummy.png" id="2_8fny0"]
-[ext_resource type="Script" path="res://Scripts/Player/PlayerStates/state_machine.gd" id="3_04n3g"]
-[ext_resource type="Script" path="res://Scripts/Enemies/Mummy/mummy_aggro_state.gd" id="4_18sl8"]
-[ext_resource type="Script" path="res://Scripts/Enemies/Mummy/passive_state.gd" id="5_00s6o"]
-[ext_resource type="Script" path="res://Scripts/Enemies/Mummy/waking_state.gd" id="6_acdfu"]
+[ext_resource type="Script" uid="uid://dlmlqea2et8ql" path="res://Scripts/Player/PlayerStates/state_machine.gd" id="3_04n3g"]
+[ext_resource type="Script" uid="uid://idt26s86lgrv" path="res://Scripts/Enemies/Mummy/mummy_aggro_state.gd" id="4_18sl8"]
+[ext_resource type="Script" uid="uid://rweaufk21ung" path="res://Scripts/Enemies/Mummy/passive_state.gd" id="5_00s6o"]
+[ext_resource type="Script" uid="uid://cvn6d00edofxb" path="res://Scripts/Enemies/Mummy/waking_state.gd" id="6_acdfu"]
 [ext_resource type="AudioStream" uid="uid://dc10qrcjcsta5" path="res://Sounds/mummy_wake.wav" id="7_jppne"]
-[ext_resource type="Script" path="res://Scripts/sound_effect_player.gd" id="8_ynrlu"]
-[ext_resource type="Script" path="res://Scripts/Enemies/Mummy/player_hurter.gd" id="9_tg0bl"]
+[ext_resource type="Script" uid="uid://cailuu6804x1h" path="res://Scripts/sound_effect_player.gd" id="8_ynrlu"]
+[ext_resource type="Script" uid="uid://cukfvupalltqk" path="res://Scripts/Enemies/Mummy/player_hurter.gd" id="9_tg0bl"]
 [ext_resource type="AudioStream" uid="uid://rn01ct771nrh" path="res://Sounds/hurt_1.wav" id="10_7uhr8"]
 [ext_resource type="AudioStream" uid="uid://bc8so1lavnmxl" path="res://Sounds/mummy_chase.wav" id="11_2elw8"]
-
-[sub_resource type="Animation" id="Animation_cmt5j"]
-resource_name = "Run"
-step = 0.05
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Flipper/Animator/Sprite2D:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Flipper/Animator/Sprite2D:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 1.33, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, 1.33, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Flipper/Animator/Sprite2D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.523599, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.523599, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Flipper/Animator/Sprite2D:scale:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Flipper/Animator/Sprite2D:scale:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.57, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.57, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
-}
 
 [sub_resource type="Animation" id="Animation_y82id"]
 resource_name = "Idle"
@@ -187,11 +128,70 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_cmt5j"]
+resource_name = "Run"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/Animator/Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/Animator/Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1, -0.25, 0, 0.25, 0, 1.33, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0, 1.33, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/Animator/Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-0.523599, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.523599, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.523599, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flipper/Animator/Sprite2D:scale:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Flipper/Animator/Sprite2D:scale:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.57, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0.57, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gywfe"]
 _data = {
-"Idle": SubResource("Animation_y82id"),
-"RESET": SubResource("Animation_y75nm"),
-"Run": SubResource("Animation_cmt5j")
+&"Idle": SubResource("Animation_y82id"),
+&"RESET": SubResource("Animation_y75nm"),
+&"Run": SubResource("Animation_cmt5j")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j2jm"]
@@ -207,7 +207,7 @@ script = ExtResource("1_cg7va")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_gywfe")
+&"": SubResource("AnimationLibrary_gywfe")
 }
 speed_scale = 2.0
 
